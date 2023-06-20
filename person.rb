@@ -1,7 +1,7 @@
-Class Person 
-def 
-initialize (id, name, age)
-@id = id
-@name = name
-@age = age
-end 
+Class Person
+def
+initialize(id, name, age)
+  @id = id
+  @name = name
+  @age = age
+end
