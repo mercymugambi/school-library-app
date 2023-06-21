@@ -1,5 +1,7 @@
-class CapitalizeDecorator < Decorator
+require_relative 'base_decorator'
+# define capitalize secorator
+class CapitalizeDecorator < BaseDecorator
   def correct_name
-    super.correct_name.capitalize
+    super&.capitalize
   end
 end
