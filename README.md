@@ -94,11 +94,9 @@ Example command:
  bundle install 
 ```
 
-
 ### Setup
 
 Clone this repository to your desired folder:
-
 
 Example commands:
 
@@ -120,9 +118,7 @@ Example command:
 ```
 
 ### Usage
-
 To run the project, execute the following command:
-
 
 Example command:
 
