@@ -129,7 +129,6 @@ class App
     exit
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
   def run_app(option_id)
     case option_id
     when '1'
@@ -152,7 +151,6 @@ class App
     display_options
   end
 
-  # rubocop:enable Metrics/CyclomaticComplexity
   def initial
     puts 'Welcome to School Library App!'
     display_options
