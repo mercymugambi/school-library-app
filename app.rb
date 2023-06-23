@@ -1,13 +1,13 @@
 require_relative 'book'
 require_relative 'teacher'
 require_relative 'student'
-require_relative 'rentals'
+require_relative 'rental'
 
 class App
   def initialize
     @books = []
     @people = []
-    @rentals = []
+    @rental = []
   end
 
   def create_person
@@ -43,6 +43,7 @@ class App
     student = Student.new(student_age, student_name, is_permitted)
     @people.push(student)
   end
+  
 
   def create_teacher
     print 'Age: '
@@ -96,18 +97,18 @@ class App
       puts 'Enter the date in this format yy/mm/dd: '
       date = gets.chomp
       rental = Rental.new(@books[book_id], @people[person_id], date)
-      @rentals.push(rental)
+      @rental.push(rental)
       puts 'Rental created successfully'
     end
   end
 
   def rental_list
-    if @rentals.empty?
+    if @rental.empty?
       puts 'No rentals available'
     else
       puts 'Enter the person ID to get their rentals: '
       person_id = gets.chomp.to_i
-      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+      person_rentals = @rental.select { |rental| rental.person.id == person_id }
       if person_rentals.empty?
         puts 'The selected person has no rentals'
       else
@@ -117,6 +118,7 @@ class App
       end
     end
   end
+  
 
   def display_options
     puts 'Please choose an option by entering a number'
