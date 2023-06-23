@@ -7,7 +7,7 @@ class Teacher < Person
     super(age, name, parent_permission: parent_permission)
     @specialization = specialization
     @id = Random.rand(1..1000)
-  end  
+  end
 
   def can_use_services?
     true

@@ -7,11 +7,11 @@ class App
   def initialize
     @books = []
     @people = []
-    @rental = []
+    @rentals = []
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
+    puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]:'
     option = gets.chomp
     case option
     when '1'
@@ -31,19 +31,10 @@ class App
     print 'Name: '
     student_name = gets.chomp
     print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp
-    is_permitted = case parent_permission.downcase
-                   when 'y'
-                     true
-                   when 'n'
-                     false
-                   else
-                     puts 'It\'s a yes or no type thing! C\'mon now!'
-                   end
-    student = Student.new(student_age, student_name, is_permitted)
-    @people.push(student)
+    parent_permission = gets.chomp.downcase == 'y'
+    student = Student.new(student_age, student_name, parent_permission)
+    @people << student
   end
-  
 
   def create_teacher
     print 'Age: '
@@ -53,7 +44,7 @@ class App
     print 'Specialization: '
     teacher_specialization = gets.chomp
     teacher = Teacher.new(teacher_age, teacher_name, teacher_specialization)
-    @people.push(teacher)
+    @people << teacher
   end
 
   def list_people
@@ -70,7 +61,7 @@ class App
     print 'Author: '
     book_author = gets.chomp
     book = Book.new(book_title, book_author)
-    @books.push(book)
+    @books << book
     puts 'Book created successfully'
   end
 
@@ -96,19 +87,19 @@ class App
       person_id = gets.chomp.to_i
       puts 'Enter the date in this format yy/mm/dd: '
       date = gets.chomp
-      rental = Rental.new(@books[book_id], @people[person_id], date)
-      @rental.push(rental)
+      rental = Rental.new(@people[person_id], @books[book_id], date)
+      @rentals << rental
       puts 'Rental created successfully'
     end
   end
 
   def rental_list
-    if @rental.empty?
+    if @rentals.empty?
       puts 'No rentals available'
     else
       puts 'Enter the person ID to get their rentals: '
       person_id = gets.chomp.to_i
-      person_rentals = @rental.select { |rental| rental.person.id == person_id }
+      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
       if person_rentals.empty?
         puts 'The selected person has no rentals'
       else
@@ -118,7 +109,6 @@ class App
       end
     end
   end
-  
 
   def display_options
     puts 'Please choose an option by entering a number'
@@ -139,6 +129,7 @@ class App
     exit
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def run_app(option_id)
     case option_id
     when '1'
@@ -161,6 +152,7 @@ class App
     display_options
   end
 
+  # rubocop:enable Metrics/CyclomaticComplexity
   def initial
     puts 'Welcome to School Library App!'
     display_options

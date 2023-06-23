@@ -5,7 +5,7 @@ require_relative 'trimmer_decorator'
 require_relative 'rental'
 
 class Person < Nameable
-  def initialize(age = nil, name, parent_permission)
+  def initialize(age, name, parent_permission)
     super()
     @id = Random.rand(1..1000)
     @name = name
