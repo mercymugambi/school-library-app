@@ -14,7 +14,6 @@
 2. [💻 Getting Started](#getting-started)
   > [Prerequisites](#prerequisites)
   >> [Setup](#setup)
-  >>> [Install](#install)
   >>>> [Usage](#usage)
   >>>>> [Run tests](#run-tests)
   >>>>>> [Deployment](#deployment)
@@ -23,8 +22,7 @@
 5. [🤝 Contributing](#contributing)
 6. [⭐️ Show your support](#support)
 7. [🙏 Acknowledgements](#acknowledgements)
-8. [❓ FAQ (OPTIONAL)](#faq)
-9. [📝 License](#license)
+8. [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -67,17 +65,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com) -->
-
-
-<!-- GETTING STARTED -->
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 
@@ -87,13 +74,6 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-
-Example command:
-
-```sh
- bundle install 
-```
-
 ### Setup
 
 Clone this repository to your desired folder:
@@ -101,20 +81,8 @@ Clone this repository to your desired folder:
 Example commands:
 
 ```sh
-  cd my-folder
+  cd school-library-appr
   git clone https://github.com/mercymugambi/school-library-app.git
-```
-
-### Install
-
-Install this project with:
-
-
-Example command:
-
-```sh
-  cd school-library-app
-  code .
 ```
 
 ### Usage
@@ -123,7 +91,7 @@ To run the project, execute the following command:
 Example command:
 
 ```sh
-  home.rb
+  app.rb
 ```
 
 ### Run tests
@@ -134,20 +102,20 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  rspec
 ```
 
 ### Deployment
 
-<!-- You can deploy this project using:
+You can deploy this project using:
 
-<!--
+
 Example:
 
 ```sh
-
+    deploy using Netlify 
 ```
- -->
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,8 +136,8 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 1. **Led a book**
-2. **[Add a book]**
-3. **[Intergrate with database]**
+2. **Add a book**
+3. **Intergrate with database**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
